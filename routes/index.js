@@ -38,7 +38,7 @@ router.post("/register", function(req, res){
             return res.render("register", {error: err.message});
        }
        passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Hiya, " + user.username + "! Welcome to your Blog App!"); 
+            req.flash("success", "Hiya, " + user.username + "! Thanks for creating a new account. Welcome to the blog!"); 
             res.redirect("/posts"); 
        });
     });
@@ -55,7 +55,7 @@ router.get("/login", function(req, res){
 router.post("/login", passport.authenticate("local", 
     {
         successRedirect: "/posts",
-		successFlash: "Hey... you! You're back ^_^ Welcome back, enjoy your time here!",
+		successFlash: "Hey you! Welcome back. ^_^ Enjoy your time here!",
         failureRedirect: "/login",
 		failureFlash: true
         
