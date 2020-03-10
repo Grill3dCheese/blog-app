@@ -18,7 +18,6 @@ html {
 h1 {
 	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-weight: 900;
-	margin: 0 0 35px 0;
 	letter-spacing: 1px;
 	text-transform: uppercase
 }
@@ -62,6 +61,22 @@ a {
 a:focus,
 a:hover {
 	text-decoration: none
+}
+
+p {
+	margin-top: 16px;
+}
+
+.shampoo-gradient {
+    background: linear-gradient(40deg,#FFFFE0,#FDCFF3) !important;
+}
+
+.btn.shampoo-gradient {
+	color: #40434E
+}
+
+.container-fluid {
+	padding: 65px 35px 0 35px;
 }
 
 .imgShadow {
@@ -171,137 +186,29 @@ hr {
 	color: #e1a87a;
 }
 
-.masthead {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background-color: #000;
-    background-size: cover;
-	background-position: center
+.jumbotron {
+	background-color: #40434E;
+	color: lightyellow;
+	padding: 2rem 1rem
 }
 
-.masthead .intro-body {
-    display: table-cell;
-    vertical-align: middle
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.jumbotron {
+		width: 75%;
+		margin: 50px auto
+	}
 }
 
-.masthead .intro-body .brand-heading {
-    font-size: 3.5em
+ /* Extra large devices (X-large desktops, 1700px and up) */
+@media (min-width: 1700px) {
+	.jumbotron {
+		width: 50%;
+		margin: 50px auto
+	}
 }
 
-.masthead .intro-body .intro-text {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.55em;
-}
-
- /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 568px) and (max-width: 767.98px) {
-    .masthead {
-        padding: 100px 0;
-    }
-    .masthead .intro-body .brand-heading {
-        font-size: 72px
-    }
-    .masthead .intro-body .intro-text {
-        font-size: 24px;
-        letter-spacing: 0.55em;
-    }
-}
-
- /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .masthead .intro-body .brand-heading {
-        font-size: 120px
-    }
-    .masthead .intro-body .intro-text {
-        font-size: 18px
-    }
-}
-
- /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .masthead .intro-body .brand-heading {
-        font-size: 150px
-    }
-    .masthead .intro-body .intro-text {
-        font-size: 1.5em
-    }
-}
-
- /*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-    .masthead .intro-body .brand-heading {
-        font-size: 180px
-    }
-    .masthead .intro-body .intro-text {
-        font-size: 2em
-    }
-}
-
-.intro-btn {
-	font-size: 16px;
-	font-weight: bold;
-	letter-spacing: .16em;
-	text-transform: uppercase;
-	width: 120px;
-	padding: 21px 34px;
-	transition: background .3s ease-in-out;
-	color: #fff;
-	border: 2px solid #fff;
-	background: transparent
-}
-
-.intro-btn:focus,
-.intro-btn:hover {
-	color: #fff;
-	outline: none;
-	background: hsla(0, 0%, 100%, .1)
-}
-
-.about-page {
-	background-color: #f0f0f0;
-	padding: 100px 0 100px 0;
-	color: #151515
-}
-
-.about-page img {
-	max-width: 100%
-}
-
-.info-bar {
-	padding: 75px 0 75px 0;
-}
-
-.contact-btn {
-	color: #fff;
-	border: 1px solid #e1a87a;
-	padding: 21px 34px;
-	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
-	font-weight: 900;
-	font-size: 11px;
-	letter-spacing: .16em;
-	text-transform: uppercase;
-	transition: all .3s ease-in-out
-}
-
-.contact-btn:focus,
-.contact-btn:hover {
-	background-color: #e1a87a;
-	color: #151515;
-	transition: all .3s ease-in-out
-}
-
-/* Project Section & Cards */
-
-.project-page {
-	background-color: #f0f0f0;
-	padding: 100px 0 100px 0;
-	color: #151515
-}
+/* Cards */
 
 .card.card-overlay.slender {
 	margin-top: 1.25rem;
@@ -345,68 +252,18 @@ hr {
     width: 100%;
 }
 
+.card-title {
+    margin-bottom: .75rem;
+}
+
 .card-body {
 	padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-radius: 0 !important;
 }
 
-.cta {
-  	padding: 100px 0;
-  	background-attachment: scroll;
-}
-
-.image-box {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--image-url) center center;
-  background-size: cover;
-}
-
-@media (min-width: 1024px) {
-  .cta {
-    background-attachment: fixed;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
-  .cta {
-    background-attachment: scroll;
-  }
-}
-
-.cta span.quote {
-  	font-size: 30px;
-  	font-weight: 300;
-  	line-height: 32px;
-  	display: block;
-}
-
-@media (min-width: 768px) {
-  .cta {
-    padding: 150px 0;
-  }
-  .cta span.quote {
-    font-size: 36px;
-    line-height: 38px;
-  }
-}
-
-@media (min-width: 992px) {
-  .cta {
-    padding: 300px 0;
-  }
-  .cta span.quote {
-    font-size: 40px;
-    line-height: 42px;
-  }
-}
-
 
 /*END*/
-
-#imageRow {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .form {
     margin: 25px auto;
@@ -445,8 +302,6 @@ hr {
     margin: 25px auto;
 }
 
-
-
 /* Google Maps */
 #map {
     height: 400px;
@@ -462,7 +317,6 @@ hr {
 }
 
 .footer {
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
