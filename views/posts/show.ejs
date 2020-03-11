@@ -5,7 +5,7 @@
                 <div class="list-group">
                     <li class="list-group-item active"><%= post.name %></li>
                     <li class="list-group-item"><%= post.location %></li>
-                    <li class="list-group-item">$<%= post.price %>/night</li>
+                    <li class="list-group-item">$<%= post.entry %>/night</li>
                 </div>
                 <div id="map"></div>
             </div>
@@ -13,7 +13,7 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="<%= post.image %>">
                     <div class="caption-full">
-                        <h4 class="pull-right">$<%= post.price %>/night</h4>
+                        <h4 class="pull-right">$<%= post.entry %>/night</h4>
                         <h4><a><%= post.name %></a></h4>
                         <p><%= post.description %></p>
                         <p>
