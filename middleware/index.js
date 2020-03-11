@@ -10,7 +10,7 @@ middlewareObj.checkPostOwnership = function(req, res, next){
         Post.findById(req.params.id, function(err, foundPost){
         if(err || !foundPost){
             console.log(err);
-            req.flash("error", "Sorry, we're not able to locate that post. Please try again.");
+            req.flash("error", "Sorry, we're not able to locate that entry. Please try again.");
             res.redirect("back");
         } else {
             //does user own the post?
@@ -19,13 +19,13 @@ middlewareObj.checkPostOwnership = function(req, res, next){
                 next();
             } else {
                 req.flash("error", "You don't have permission to do that!");
-                res.redirect("back");
+                res.redirect("/posts");
             }
         }
     });
     } else {
        req.flash("error", "You need to be logged in to perform that action.");
-       res.redirect("back");
+       res.redirect("/login");
     } 
 };
 
