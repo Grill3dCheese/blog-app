@@ -20,14 +20,14 @@ router.get("/", function(req, res){
 router.post("/", middleware.isLoggedIn, function(req, res){
   // get data from form and add to posts array
   var name = req.body.name;
-  var price = req.body.price;
+  var entry = req.body.entry;
   var image = req.body.image;
   var desc = req.body.description;
   var author = {
       id: req.user._id,
       username: req.user.username
   };
-    var newPost = {name: name, price: price, image: image, description: desc, author:author};
+    var newPost = {name: name, entry: entry, image: image, description: desc, author:author};
     // Create a new post and save to DB
     Post.create(newPost, function(err, newlyCreated){
         if(err){
@@ -35,7 +35,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         } else {
             //redirect back to posts page
             console.log(newlyCreated);
-            req.flash("success", "New post created!");
+            req.flash("success", "Success! A new blog entry has been created!");
             res.redirect("/posts");
         }
     });
@@ -51,7 +51,7 @@ router.get("/:id", function(req, res){
     Post.findById(req.params.id).populate("comments").exec(function(err, foundPost){
         if(err || !foundPost){
             console.log(err);
-            req.flash("error", "Sorry, that post does not exist!");
+            req.flash("error", "Sorry, that particular entry does not exist!");
             res.redirect("back");
         } else {
             console.log(foundPost);
@@ -65,7 +65,7 @@ router.get("/:id", function(req, res){
 router.get("/:id/edit", middleware.checkPostOwnership, function(req, res){
         Post.findById(req.params.id, function(err, foundPost){
             if(err || !foundPost){
-                req.flash("error", "Post not found!");
+                req.flash("error", "Apologies, that entry was not found!");
                 res.redirect("back");
             } else {
                 res.render("posts/edit", {post: foundPost});
@@ -82,7 +82,7 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
             req.flash("error", err.message);
             res.redirect("back");
         } else {
-            req.flash("success","Successfully Updated!");
+            req.flash("success","This entry has been successfully updated!");
             res.redirect("/posts/" + post._id);
         }
     });
@@ -92,10 +92,10 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
 router.delete("/:id", middleware.checkPostOwnership, function(req, res){
     Post.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            req.flash("error", "Error, post not deleted");
+            req.flash("error", "Hmmm, something went wrong. That entry was not deleted.");
             res.redirect("/posts");
         } else {
-            req.flash("success", "Post successfully deleted!");
+            req.flash("success", "BOOM! Success! Entry successfully deleted!");
             res.redirect("/posts");
         }
     });
