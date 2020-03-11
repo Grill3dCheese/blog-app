@@ -3,10 +3,9 @@ var mongoose = require("mongoose");
 // schema setup
 var postSchema = new mongoose.Schema({
     name: String,
-    price: String,
+    entry: String,
     image: String,
     description: String,
-    location: String,
     createdAt: { type: Date, default: Date.now },
     author: {
         id : {
