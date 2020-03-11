@@ -1,39 +1,46 @@
 <%- include('partials/header'); -%>
 
-    <div class="row col-sm-12 col-md-4 col-md-offset-4 row">
-        <h1 class="form-h1">Sign Up</h1>
-        <div class="form-div">
-            <form action="/register" method="POST">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="username" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="firstName" placeholder="First name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="lastName" placeholder="Last name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="city" placeholder="City">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="avatar" placeholder="Avatar image URL">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" name="adminCode" placeholder="Admin code">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
-                </div>
-            </form>
-            <a href="/posts">Go Back</a>
-        </div>
-    </div>
+
+<div class="container">
+	<div class="row justify-content-center topPadding">
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<h1 class="card-header stPat-gradient text-center py-4">Sign Up</h1>
+				<div class="card-body px-lg-5 pt-0">
+					<form action="/register" method="POST">
+						<div class="mod-form">
+							<input class="form-control" type="text" name="username" placeholder="Username">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="password" name="password" placeholder="Password">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="firstName" placeholder="First name">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="lastName" placeholder="Last name">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="city" placeholder="City">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="email" name="email" placeholder="Email">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="avatar" placeholder="Avatar image URL">
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="password" name="adminCode" placeholder="Admin code">
+						</div>
+						<div class="mod-form">
+							<button class="btn btn-outline-dark btn-lg btn-block">Sign Up!</button>
+						</div>
+					</form>
+					<a href="/posts">Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <%- include('partials/footer'); -%>
