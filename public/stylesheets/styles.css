@@ -67,12 +67,16 @@ p {
 	margin-top: 16px;
 }
 
-.btn {
-	border: 0
-}
-
 .shampoo-gradient {
     background: linear-gradient(40deg,#FFFFE0,#FDCFF3) !important;
+}
+
+.stPat-gradient {
+	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(97,255,131,1) 100%) !important;
+}
+
+.forgot-gradient {
+	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
 }
 
 .btn.shampoo-gradient {
@@ -110,6 +114,10 @@ p {
 	z-index: 1070;
 }
 
+.topPadding {
+	padding-top: 10rem
+}
+
 hr {
 	height: 3px;
 	width: 55px;
@@ -120,9 +128,9 @@ hr {
 #mainNav {
 	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 1rem;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); */
     transition: all 1.2s;
-	background-color: rgba(25, 25, 25, 0.9);
+	background-color: rgb(237, 242, 247);
 	text-transform: uppercase;
 }
 
@@ -131,11 +139,11 @@ hr {
 }
 
 #mainNav .nav-link {
-    color: #e1a87a;
+    color: #191919;
 }
 
 #mainNav .nav-link:hover {
-    color: #f0f0f0;
+    color: #e1a87a;
 }
 
 #mainNav button {
@@ -143,8 +151,8 @@ hr {
 }
 
 .wrapper-menu {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,7 +168,7 @@ hr {
   background-color: #e1a87a;
   border-radius: 5px;
   width: 100%;
-  height: 4px;
+  height: 3px;
 }
 
 .line-menu.half {
@@ -266,6 +274,38 @@ hr {
     border-radius: 0 !important;
 }
 
+/* Forms */
+
+.mod-form {
+	position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mod-form .form-control {
+    height: auto;
+    padding: .6rem 0 .4rem 0;
+    margin: 0 0 .5rem 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.mod-form input:not([type]), .mod-form input[type="text"]:not(.browser-default), .mod-form input[type="password"]:not(.browser-default), .mod-form input[type="email"]:not(.browser-default), .mod-form input[type="url"]:not(.browser-default), .md-form textarea.md-textarea {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
 /*END*/
 
 .form {
@@ -290,14 +330,6 @@ hr {
 
 .delete-form {
     display: inline;
-}
-
-.form-h1 {
-    text-align: center;
-}
-
-.form-div {
-    margin: 25px auto;
 }
 
 .profile-div {
