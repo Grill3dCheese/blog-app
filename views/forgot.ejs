@@ -1,16 +1,22 @@
 <%- include('partials/header'); -%>
-<div class="row">
-	<div class="col-md-12">
-		<form class="form-div" action="/forgot" method="POST">
-			<legend>Forgot Password</legend>
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email" name="email" autofocus class="form-control">
+<div class="container">
+	<div class="row justify-content-center topPadding">
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<h1 class="card-header forgot-gradient text-center py-4">Forgot Password</h1>
+				<div class="card-body px-lg-5 pt-0">
+					<form action="/forgot" method="POST">
+						<div class="mod-form">
+							<input class="form-control" type="email" name="email" placeholder="Email" autofocus>
+						</div>
+						<div class="mod-form">
+							<input type="submit" class="btn btn-outline-dark btn-lg btn-block" value="Reset Password">
+						</div>
+					</form>
+					<a href="/login">Login Page</a>
+				</div>
 			</div>
-			<div class="form-group">
-				<input type="submit" class="btn btn-primary" value="Reset Password">
-			</div>
-		</form>
+		</div>
 	</div>
 </div>
 <%- include('partials/footer'); -%>
