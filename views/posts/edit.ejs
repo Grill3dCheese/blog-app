@@ -1,35 +1,35 @@
 <%- include('../partials/header'); -%>
 
-    <div class="container">
-        <div class="row">
-            <h1 id="titleForm">Edit <%= post.name %></h1>
-            <div class="form">
-                <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" type="text" name="post[name]" id="name" value="<%= post.name %>">
-                    </div>
-					                    <div class="form-group">
-                        <label for="image">Image</label>
-                        <input class="form-control" type="text" name="post[image]" id="image" value="<%= post.image %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input class="form-control" type="text" name="post[description]" id="description" value="<%= post.description %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="entry">Post Entry</label>
-						<textarea class="form-control" name="post[entry]" id="entry" rows="4"><%= post.entry %></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-                    </div>
-                </form>
-                <a href="/posts/<%= post._id %>">Go Back</a>
-            </div>
-        </div>
+<div class="container">
+	<div class="row justify-content-center topPadding">
+		<div class="col-sm-12 col-md-8">
+			<div class="card">
+				<h1 class="card-header stPat-gradient text-center py-4">Edit
+					"<%= post.name %>"
+				</h1>
+				<div class="card-body px-lg-5 pt-0">
+					<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+						<div class="mod-form">
+							<input class="form-control" type="text" name="post[name]" id="name" value="<%= post.name %>" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="post[description]" id="description" value="<%= post.description %>" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="post[image]" id="image" value="<%= post.image %>" required>
+						</div>
+						<div class="mod-form">
+							<textarea class="form-control mod-textarea" name="post[entry]" id="entry" rows="5" required><%= post.entry %></textarea>
+						</div>
+						<div class="mod-form">
+							<button class="btn btn-lg btn-outline-dark btn-block">Submit!</button>
+						</div>
+					</form>
+					<a href="/posts/<%= post._id %>">Go Back</a>
+				</div>
+			</div>
+		</div>
 	</div>
-   
-
+</div>
 
 <%- include('../partials/footer'); -%>

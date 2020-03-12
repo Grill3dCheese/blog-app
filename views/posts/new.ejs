@@ -1,34 +1,34 @@
 <%- include('../partials/header'); -%>
 
-   	<div class="container">
-        <div class="row col-sm-12 col-md-4 col-md-offset-4 row">
-            <h1 id="titleForm">Create a New Post</h1>
-            <div class="form">
-                <form action="/posts" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Name">
-                    </div>
-					                    <div class="form-group">
-                        <label for="image">Image</label>
-                        <input class="form-control" type="text" name="image" id="image" placeholder="Image URL">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input class="form-control" type="text" name="description" id="description" placeholder="Description">
-                    </div>
-                    <div class="form-group">
-                        <label for="entry">Post Entry</label>
-						<textarea class="form-control" name="entry" id="entry" rows="4" placeholder="Post Entry..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-                    </div>
-                </form>
-                <a href="/posts">Go Back</a>
-            </div>
-        </div>
-   </div>
+<div class="container">
+	<div class="row justify-content-center topPadding">
+		<div class="col-sm-12 col-md-8">
+			<div class="card">
+				<h1 class="card-header stPat-gradient text-center py-4">Create a New Post</h1>
+				<div class="card-body px-lg-5 pt-0">
+					<form action="/posts" method="POST">
+						<div class="mod-form">
+							<input class="form-control" type="text" name="name" id="name" placeholder="Post Title" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="description" id="description" placeholder="Description" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="image" id="image" placeholder="Post image URL" required>
+						</div>
+						<div class="mod-form">
+							<textarea class="form-control mod-textarea" name="entry" id="entry" rows="5" placeholder="Post Entry..." required></textarea>
+						</div>
+						<div class="mod-form">
+							<button class="btn btn-lg btn-outline-dark btn-block">Submit!</button>
+						</div>
+					</form>
+					<a href="/posts">Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <%- include('../partials/footer'); -%>
