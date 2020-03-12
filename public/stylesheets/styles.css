@@ -290,7 +290,7 @@ hr {
     border-radius: 0;
 }
 
-.mod-form input:not([type]), .mod-form input[type="text"]:not(.browser-default), .mod-form input[type="password"]:not(.browser-default), .mod-form input[type="email"]:not(.browser-default), .mod-form input[type="url"]:not(.browser-default), .md-form textarea.md-textarea {
+.mod-form input:not([type]), .mod-form input[type="text"]:not(.browser-default), .mod-form input[type="password"]:not(.browser-default), .mod-form input[type="email"]:not(.browser-default), .mod-form input[type="url"]:not(.browser-default), .mod-form textarea.mod-textarea {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     background-color: transparent;
@@ -310,10 +310,6 @@ hr {
 
 .form {
     margin: 25px auto;
-}
-
-#titleForm {
-    text-align: center;
 }
 
 .thumbnail img {
