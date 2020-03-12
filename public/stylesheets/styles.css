@@ -306,6 +306,16 @@ hr {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
+/* Posts Show Page */
+
+.list-icon {
+	position: absolute;
+	border-left: 1px solid rgba(0,0,0,.125);
+	height: 50px;
+	top:0px;
+	left:54px;
+}
+
 /*END*/
 
 .form {
@@ -321,7 +331,7 @@ hr {
 }
 
 .thumbnail .caption-full {
-    padding: 9px;
+    padding: 30px;
 }
 
 .delete-form {
