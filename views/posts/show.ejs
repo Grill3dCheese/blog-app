@@ -34,7 +34,7 @@
 						<em><%= post.description %></em>
 					</h5>
 					<p>
-						<%= moment(post.createdAt).fromNow() %>
+						<%= moment(post.createdAt).format('L'); %>
 					</p>
 					<p>
 						<%= post.entry %>
