@@ -1,9 +1,10 @@
 var mongoose = require("mongoose");
+var uniqueValidator = require('mongoose-unique-validator');
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var UserSchema = new mongoose.Schema({
-    username: {type: String, unique: true, required: true},
-    password: {type: String, unique: false, required: true},
+    username: {type: String, unique: true, required: true, uniqueCaseInsensitive: true},
+    password: String,
     avatar: String,
     firstName: String,
     lastName: String,
@@ -13,6 +14,8 @@ var UserSchema = new mongoose.Schema({
     resetPasswordExpires: Date,
     isAdmin: {type: Boolean, default: false}
 });
+
+UserSchema.plugin(uniqueValidator);
 
 UserSchema.plugin(passportLocalMongoose);
 
