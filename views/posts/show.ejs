@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row justify-content-center topPadding">
-		<div class="col-md-4">
+		<div class="col-md-4 mb-5">
 			<div class="list-group list-group-flush imgShadow">
 				<li class="list-group-item shampoo-gradient">
 					<div class="list-icon"></div>
@@ -40,9 +40,9 @@
 						<%= post.entry %>
 					</p>
 					<% if(currentUser && post.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-						<a class="btn btn-xs btn-warning" href="/posts/<%= post._id %>/edit">Edit</a>
+						<a class="btn border-0 lemonade-gradient" href="/posts/<%= post._id %>/edit">Edit</a>
 						<form class="delete-form" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-							<button class="btn btn-xs btn-danger">Delete</button>
+							<button class="btn border-0 forgot-gradient">Delete</button>
 						</form>
 						<% } %>
 				</div>
@@ -52,19 +52,19 @@
 			<div class="well">
 				<!--Setting up the add new comment button that is used for collapsing-->
 				<div class="text-right">
-					<a class="btn btn-success pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new comment</a>
+					<a class="btn border-0 stPat-gradient pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+						<i class="far fa-plus-square mr-1"></i> Add new comment</a>
 				</div>
 				<!--Comment section title-->
-				<h4>
-					<strong>Comments
-						<span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span>
+				<h4 class="my-5">
+					<i class="far fa-comment mr-1"></i>
+					<strong>Comments:
 					</strong>
 				</h4>
 
 				<!--Collapse Add a comment form START-->
 				<div class="collapse" id="collapseComment">
-					<div class="well" style="border-left: 5px solid #00C851;">
+					<div class="well pt-5">
 						<% if(!currentUser) { %>
 							<!--If the user is not logged in, direct him to the login page-->
 							<h5>You need to login before you can comment.
@@ -72,19 +72,17 @@
 							<% } %>
 								<% if(currentUser) { %>
 									<!--If the user is logged in, show the new comment form-->
-									<h4>Write your comment
-										<span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									<h4>Leave your comment below:
 									</h4>
 									<form id="add-comment-form" action="/posts/<%= post._id %>/comments" method="POST">
 										<div class="form-group">
 											<input class="form-control" type="text" disabled value="<%= currentUser.username %>">
 										</div>
 										<div class="form-group">
-											<textarea class="form-control" name="comment[text]" placeholder="Write your comment..." form="add-comment-form" rows="5" cols="70"></textarea>
+											<textarea class="form-control" name="comment[text]" placeholder="Leave your comment here..." form="add-comment-form" rows="5" cols="70"></textarea>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-success btn-sm">Comment
-												<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+											<button class="btn border-0 stPat-gradient btn-xs"> <i class="far fa-comment-dots"></i> Comment
 											</button>
 										</div>
 									</form>
@@ -106,13 +104,13 @@
 									<strong>
 										<% if (currentUser && currentUser._id.equals(comment.author.id) || currentUser && currentUser.isAdmin) { %>
 											<!--If the current user owns the comment, change the color of the user icon-->
-											<span style="color: orange;" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+											<span style="color: orange;" class="far fa-user" aria-hidden="true"></span>
 											<% } else { %>
 												<!--Else just display it black-->
-												<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+											<span class="far fa-user" aria-hidden="true"></span>
 												<% } %>
 													<!--Print out the author username-->
-													<%= comment.author.username %>
+													<%= comment.author.username %>,
 									</strong>
 
 									<!--Show when the comment was made-->
@@ -129,32 +127,28 @@
 									<% if (currentUser && currentUser._id.equals(comment.author.id) || currentUser && currentUser.isAdmin) { %>
 
 										<!--Edit button used for collapsing the edit comment form-->
-										<a class="btn btn-xs btn-warning" role="button" data-toggle="collapse" href="#collapseEdit<%= comment._id %>" aria-expanded="false" aria-controls="collapse<%= comment._id %>">
+										<a class="btn border-0 btn-xs lemonade-gradient" role="button" data-toggle="collapse" href="#collapseEdit<%= comment._id %>" aria-expanded="false" aria-controls="collapse<%= comment._id %>">
 											Edit</a>
 
 										<!--Delete comment button-->
 										<form id="delete-form" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
-											<button class="btn btn-xs btn-danger">Delete</button>
+											<button class="btn border-0 btn-xs forgot-gradient">Delete</button>
 										</form>
 
 										<!--Edit comment form-->
 										<div class="collapse" id="collapseEdit<%= comment._id %>">
-											<div class="well" style="border-left: 5px solid #ffbb33; margin-top: 15px;">
-												<h4>Edit your comment
-													<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											<div class="well" style="border-left: 2px solid #ffbb33; margin-top: 15px;">
+												<h4><span class="far fa-edit mr-1" aria-hidden="true"></span> Edit your comment
 												</h4>
 												<form id="edit-comment-form<%= comment._id %>" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
 													<div class="form-group">
 														<input class="form-control" type="text" disabled value="<%= currentUser.username %>">
 													</div>
 													<div class="form-group">
-														<textarea class="form-control" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70">
-															<%= comment.text %>
-														</textarea>
+														<textarea class="form-control" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
 													</div>
 													<div class="form-group">
-														<button class="btn btn-warning btn-sm">Edit comment
-															<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+														<button class="btn border-0 lemonade-gradient">Edit comment
 														</button>
 													</div>
 												</form>
@@ -168,7 +162,7 @@
 			</div>
 			<!--COMMENT SECTION END-->
 		</div>
-		<a class="btn btn-sm btn-info backButton" href="/posts">Go Back</a>
+		<a class="btn border-0 backButton" href="/posts">Go Back</a>
 	</div>
 </div>
    
