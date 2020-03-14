@@ -67,6 +67,14 @@ p {
 	margin-top: 16px;
 }
 
+.cucumber-gradient {
+	background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+
+.lemonade-gradient {
+	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(254,255,97,1) 100%);
+}
+
 .shampoo-gradient {
     background: linear-gradient(40deg,#FFFFE0,#FDCFF3) !important;
 }
@@ -76,6 +84,9 @@ p {
 }
 
 .forgot-gradient {
+	background: -webkit-linear-gradient(310deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
+	background: -moz-linear-gradient(310deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
+	background: -o-linear-gradient(310deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
 	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
 }
 
@@ -115,14 +126,21 @@ p {
 }
 
 .topPadding {
-	padding-top: 10rem
+	padding-top: 4rem
+}
+
+@media (min-width: 992px) {
+	.topPadding {
+		padding-top: 10rem
+	}
 }
 
 hr {
-	height: 3px;
-	width: 55px;
-	background-color: #e1a87a;
-	margin-bottom: 25px
+	height: 2px;
+	width: 150px;
+	background-color: #191919;
+	margin-bottom: 25px;
+	margin-top: 25px;
 }
 
 #mainNav {
@@ -245,6 +263,10 @@ hr {
     box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
 }
 
+.card-background {
+	background-color: floralwhite
+}
+
 .view {
     position: relative;
     overflow: hidden;
@@ -332,13 +354,17 @@ hr {
     padding: 30px;
 }
 
-.delete-form {
-    display: inline;
+/* User Profile Page */
+
+.profileImg img {
+	width: 250px;
+	margin: -70px;
+	border: 5px solid #FFF;
+	border-radius: 50%
 }
 
-.profile-div {
-    width: 75%;
-    margin: 25px auto;
+.delete-form {
+    display: inline;
 }
 
 .forgot {
@@ -360,4 +386,5 @@ hr {
 
 .backButton {
     margin: 20px;
+	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(234,212,255,1) 100%);
 }
