@@ -316,8 +316,6 @@ hr {
 	left:54px;
 }
 
-/*END*/
-
 .form {
     margin: 25px auto;
 }
@@ -341,12 +339,6 @@ hr {
 .profile-div {
     width: 75%;
     margin: 25px auto;
-}
-
-/* Google Maps */
-#map {
-    height: 400px;
-    width: 100%;
 }
 
 .forgot {
