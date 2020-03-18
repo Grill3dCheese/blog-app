@@ -37,7 +37,7 @@
 						<%= moment(post.createdAt).format('L'); %>
 					</p>
 					<p>
-						<%= post.entry %>
+						<%- post.entry %>
 					</p>
 					<% if(currentUser && post.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 						<a class="btn border-0 lemonade-gradient" href="/posts/<%= post._id %>/edit">Edit</a>
@@ -120,7 +120,7 @@
 
 									<!--Printing the comment-->
 									<p>
-										<%= comment.text %>
+										<%- comment.text %>
 									</p>
 
 									<!--If the visitor is logged in and the owner of the comment, show the edit and delete buttons-->
