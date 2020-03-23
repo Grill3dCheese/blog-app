@@ -8,50 +8,30 @@
 				</h1>
 				<div class="card-body text-center profileImg">
 					<img class="imgShadow" src="<%= user.avatar %>" alt="user profile image">
-					<h4>Name:
+					<h2>
 						<%= user.firstName + " " + user.lastName %>
-					</h4>
-					<h4>City:
-						<%= user.city %>
-					</h4>
-					<h4>Email:
+					</h2>
+					<h5>
+						<i class="fas fa-map-marker-alt"></i> <em><%= user.city %></em>
+					</h5>
+					<h5><i class="far fa-envelope"></i>
 						<a href="mailto:<%= user.email %>">
 							<%= user.email %>
 						</a>
-					</h4>
-					<table>
-						<tr>
-							<td>Name: </td>
-							<td>
-								<%= user.firstName + " " + user.lastName %>
-							</td>
-						</tr>
-						<tr>
-							<td>City: </td>
-							<td>
-								<%= user.city %>
-							</td>
-						</tr>
-						<tr>
-							<td>Email: </td>
-							<td>
-								<a href="mailto:<%= user.email %>">
-									<%= user.email %>
-								</a>
-							</td>
-						</tr>
-					</table>
-					<h4>Posts created:</h4>
-					<ul>
+					</h5>
+					<h5>Posts created:</h5>
+					<ul class="postList">
 						<% posts.reverse().forEach(function(post){ %>
 							<li>
 								<a href="/posts/<%= post.id %>">
-									<%= post.name %>
+									<h5>
+									<i class="fas fa-feather-alt"></i> <%= post.name %>	
+									</h5>
 								</a>
 							</li>
 							<% }); %>
 					</ul>
-					<a class="btn btn-sm btn-info backButton" href="/posts">Go Back</a>
+					<a class="btn border-0 backButton" href="/posts">Go Back</a>
 				</div>
 			</div>
 		</div>
