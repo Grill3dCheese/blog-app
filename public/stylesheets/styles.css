@@ -70,6 +70,10 @@ p {
 	background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
+.mellowYellow-gradient {
+	background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+}
+
 .lemonade-gradient {
 	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(254,255,97,1) 100%);
 }
@@ -95,6 +99,10 @@ p {
 
 .container-fluid {
 	padding: 65px 35px 0 35px;
+}
+
+.btn.focus, .btn:focus {
+	box-shadow: none;
 }
 
 .imgShadow {
@@ -368,7 +376,10 @@ hr {
 }
 
 .postList {
-	list-style: none
+	list-style: none;
+	padding: 0;
+	margin: auto;
+	width: 12rem;
 }
 
 .delete-form {
@@ -390,6 +401,10 @@ hr {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+.footer-copyright a {
+	color: #191919;
 }
 
 .backButton {
