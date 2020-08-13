@@ -23,7 +23,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         if(err || !post){
             console.log(err);
             req.flash("error", "Post not found!");
-            res.redirect("/blog");
+            res.redirect("/posts");
         } else {
             Comment.create(req.body.comment, function(err, comment){
                 if(err || !comment){
@@ -38,7 +38,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     post.comments.push(comment);
                     post.save();
                     req.flash("success", "Successfully added comment");
-                    res.redirect("/blog/" + post._id);
+                    res.redirect("/posts/" + post._id);
                 }
             });
         }
@@ -66,7 +66,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership,function(req, res){
             res.redirect("back");
       } else {
             req.flash("success", "Comment updated!");
-            res.redirect("/blog/" + req.params.id);
+            res.redirect("/posts/" + req.params.id);
       }
    });
 });
@@ -79,7 +79,7 @@ router.delete("/:comment_id", middleware.checkCommentOwnership,function(req, res
             res.redirect("back");
         } else {
             req.flash("success", "Comment deleted");
-            res.redirect("/blog/" + req.params.id);
+            res.redirect("/posts/" + req.params.id);
         }
     });
 });
