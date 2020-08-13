@@ -9,7 +9,7 @@ router.get("/", function(req, res){
         if(err){
             console.log(err);
         } else {
-             res.render("posts/index", {posts: posts, page: "posts"});
+             res.render("blog/index", {posts: posts, page: "posts"});
         }
     });
    
@@ -36,14 +36,14 @@ router.post("/", middleware.isLoggedIn, function(req, res){
             //redirect back to posts page
             console.log(newlyCreated);
             req.flash("success", "Success! A new blog entry has been created!");
-            res.redirect("/posts");
+            res.redirect("/blog");
         }
     });
   });
 
 // new post
-router.get("/new", middleware.isLoggedIn, function(req, res){
-   res.render("posts/new");
+router.get("/new", middleware.isUserAdmin, function(req, res){
+   res.render("blog/new");
 });
 
 // show post
@@ -52,10 +52,10 @@ router.get("/:id", function(req, res){
         if(err || !foundPost){
             console.log(err);
             req.flash("error", "Sorry, that particular entry does not exist!");
-            res.redirect("back");
+            res.redirect("/blog");
         } else {
             console.log(foundPost);
-             res.render("posts/show", {post: foundPost});
+             res.render("blog/show", {post: foundPost});
         }
     });
    
@@ -68,7 +68,7 @@ router.get("/:id/edit", middleware.checkPostOwnership, function(req, res){
                 req.flash("error", "Apologies, that entry was not found!");
                 res.redirect("back");
             } else {
-                res.render("posts/edit", {post: foundPost});
+                res.render("blog/edit", {post: foundPost});
             }
         });
 });
@@ -83,7 +83,7 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
             res.redirect("back");
         } else {
             req.flash("success","This entry has been successfully updated!");
-            res.redirect("/posts/" + post._id);
+            res.redirect("/blog/" + post._id);
         }
     });
   });
@@ -93,10 +93,10 @@ router.delete("/:id", middleware.checkPostOwnership, function(req, res){
     Post.findByIdAndRemove(req.params.id, function(err){
         if(err){
             req.flash("error", "Hmmm, something went wrong. That entry was not deleted.");
-            res.redirect("/posts");
+            res.redirect("/blog");
         } else {
             req.flash("success", "BOOM! Success! Entry successfully deleted!");
-            res.redirect("/posts");
+            res.redirect("/blog");
         }
     });
 });
