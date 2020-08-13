@@ -39,7 +39,7 @@ router.post("/register", function(req, res){
        }
        passport.authenticate("local")(req, res, function(){
             req.flash("success", "Hiya, " + user.username + "! Thanks for creating a new account. Welcome to the blog!"); 
-            res.redirect("/blog"); 
+            res.redirect("/posts"); 
        });
     });
   
@@ -54,7 +54,7 @@ router.get("/login", function(req, res){
 // login post route logic
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect: "/blog",
+        successRedirect: "/posts",
 		successFlash: "Hey, welcome back! Enjoy your time here!",
         failureRedirect: "/login",
 		failureFlash: true
@@ -66,7 +66,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
     req.logout();
     req.flash("success", "You've been logged out successfully! See you soon.");
-    res.redirect("/blog");
+    res.redirect("/posts");
 });
 
 // user profile
@@ -204,7 +204,7 @@ router.post('/reset/:token', function(req, res) {
       });
     }
   ], function(err) {
-    res.redirect('/blog');
+    res.redirect('/posts');
   });
 });
 
