@@ -1,5 +1,4 @@
 /*START*/
-/*enabled footer to rest at bottom of page*/
 
 body {
 	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -285,14 +284,6 @@ hr {
     display: block;
 }
 
-.card-img-top {
-	border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-	-ms-flex-negative: 0;
-    flex-shrink: 0;
-    width: 100%;
-}
-
 .card-title {
     margin-bottom: .75rem;
 }
@@ -394,18 +385,14 @@ hr {
     margin-bottom: 20px;
 }
 
-.footer {
-  right: 0;
-  bottom: 0;
-  left: 0;
+/* .footer {
   padding: 1rem;
   background-color: #efefef;
-  text-align: center;
 }
 
 .footer-copyright a {
 	color: #191919;
-}
+} */
 
 .backButton {
     margin: 20px;
