@@ -59,20 +59,4 @@ $(document).ready(function() {
 			wrapperMenu.classList.toggle('open');
 		});
 	});
-
-		typer('.brand-heading')
-			.cursor({ color: '#e1a87a' })
-			.line('Intuitive', { min: 20, max: 350 })
-			.pause(550)
-			.back(-1, 200)
-			.continue('nnovative', { min: 30, max: 350 })
-			.pause()
-			.back(-1, 200)
-			.continue('ntriguing', { min: 30, max: 350 })
-			.pause()
-			.back(-1, 150)
-			.continue('mpressive', { min: 30, max: 350 })
-			.pause()
-			.back(-1, 200)
-			.continue('nspiring', { min: 30, max: 350 })
 });
