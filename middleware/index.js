@@ -11,7 +11,7 @@ middlewareObj.checkPostOwnership = function(req, res, next){
         if(err || !foundPost){
             console.log(err);
             req.flash("error", "Sorry, we're not able to locate that entry. Please try again.");
-            res.redirect("back");
+            res.redirect("/blog");
         } else {
             //does user own the post?
             if(foundPost.author.id.equals(req.user._id) || req.user.isAdmin){
@@ -19,7 +19,7 @@ middlewareObj.checkPostOwnership = function(req, res, next){
                 next();
             } else {
                 req.flash("error", "You don't have permission to do that!");
-                res.redirect("/posts");
+                res.redirect("/blog");
             }
         }
     });
@@ -42,7 +42,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
                 req.comment = foundComment;
                 next();
             } else {
-                req.flash("error", "You don't have permission to do that!");
+                req.flash("error", "Apologies, you don't have permission to do that.");
                 res.redirect("back");
             }
         }
@@ -57,8 +57,16 @@ middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash("error", "You need to be logged in to do that");
+    req.flash("error", "You will need to be logged in to do that.");
     res.redirect("/login");
+};
+
+middlewareObj.isUserAdmin = function(req, res, next) {
+	if(req.isAuthenticated() && req.user.isAdmin){
+		return next();
+	}
+    req.flash("error", "Apologies, you don't have permission to do that.");
+    res.redirect("/blog");
 };
 
 
