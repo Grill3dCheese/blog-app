@@ -1,10 +1,10 @@
-<%- include('../partials/header'); -%>
+<%- include('../partials/blogHeader'); -%>
 
    
         <div class="row">
             <h1 id="titleForm">Add New Comment to <%= post.name %></h1>
             <div class="form">
-                <form action="/posts/<%= post._id %>/comments" method="POST">
+                <form action="/blog/<%= post._id %>/comments" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="comment[text]" placeholder="Comment">
                     </div>
@@ -17,4 +17,4 @@
         </div>
    
 
-<%- include('../partials/footer'); -%>
+<%- include('../partials/blogFooter'); -%>
