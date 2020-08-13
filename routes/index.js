@@ -39,7 +39,7 @@ router.post("/register", function(req, res){
        }
        passport.authenticate("local")(req, res, function(){
             req.flash("success", "Hiya, " + user.username + "! Thanks for creating a new account. Welcome to the blog!"); 
-            res.redirect("/posts"); 
+            res.redirect("/blog"); 
        });
     });
   
@@ -54,8 +54,8 @@ router.get("/login", function(req, res){
 // login post route logic
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect: "/posts",
-		successFlash: "Hey you! Welcome back. ^_^ Enjoy your time here!",
+        successRedirect: "/blog",
+		successFlash: "Hey, welcome back! Enjoy your time here!",
         failureRedirect: "/login",
 		failureFlash: true
         
@@ -66,7 +66,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
     req.logout();
     req.flash("success", "You've been logged out successfully! See you soon.");
-    res.redirect("/posts");
+    res.redirect("/blog");
 });
 
 // user profile
@@ -117,7 +117,7 @@ router.post('/forgot', function(req, res, next) {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: "smtp.stackmail.com",
+        host: "keithmckenna.com",
 		port: 465,
 		secure: true,
         auth: {
@@ -128,8 +128,8 @@ router.post('/forgot', function(req, res, next) {
       var mailOptions = {
         to: user.email,
         from: 'hello@keithmckenna.com',
-        subject: 'YelpCamp Password Reset',
-        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        subject: 'Blog Password Reset',
+        text: 'You are receiving this email because you, or someone on your behalf, has requested to reset the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
@@ -183,7 +183,7 @@ router.post('/reset/:token', function(req, res) {
     },
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: "smtp.stackmail.com",
+        host: "keithmckenna.com",
 		port: 465,
 		secure: true,
         auth: {
@@ -194,9 +194,9 @@ router.post('/reset/:token', function(req, res) {
       var mailOptions = {
         to: user.email,
         from: 'hello@keithmckenna.com',
-        subject: 'Your YelpCamp password has been changed',
+        subject: 'Your blog password has been changed',
         text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your YelpCamp account ' + user.email + ' has just been changed.\n'
+          'This is a confirmation that the password for your blog account ' + user.email + ' has just been changed.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
         req.flash('success', 'Success! Your password has been changed.');
@@ -204,7 +204,7 @@ router.post('/reset/:token', function(req, res) {
       });
     }
   ], function(err) {
-    res.redirect('/posts');
+    res.redirect('/blog');
   });
 });
 
