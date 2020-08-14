@@ -1,4 +1,4 @@
-<%- include('../partials/header'); -%>
+<%- include('../partials/blogHeader'); -%>
 
 <div class="container">
 	<div class="row justify-content-center topPadding">
@@ -52,6 +52,7 @@
 			<div class="well">
 				<!--Setting up the add new comment button that is used for collapsing-->
 				<div class="text-right">
+					<a class="btn border-0 backButton" href="/posts">Go Back</a>
 					<a class="btn border-0 stPat-gradient pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
 						<i class="far fa-plus-square mr-1"></i> Add new comment</a>
 				</div>
@@ -162,8 +163,7 @@
 			</div>
 			<!--COMMENT SECTION END-->
 		</div>
-		<a class="btn border-0 backButton" href="/posts">Go Back</a>
 	</div>
 </div>
    
-<%- include('../partials/footer'); -%>
+<%- include('../partials/blogFooter'); -%>
