@@ -1,4 +1,4 @@
-<%- include('partials/header'); -%>
+<%- include('partials/blogHeader'); -%>
 <div class="container">
 	<div class="row justify-content-center topPadding">
 		<div class="col-sm-12 col-md-6">
@@ -7,7 +7,7 @@
 				<div class="card-body px-lg-5 pt-0">
 					<form action="/forgot" method="POST">
 						<div class="mod-form">
-							<input class="form-control" type="email" name="email" placeholder="Email" autofocus>
+							<input class="form-control" type="email" name="email" placeholder="Email" autofocus="autofocus" required>
 						</div>
 						<div class="mod-form">
 							<input type="submit" class="btn btn-outline-dark btn-lg btn-block" value="Reset Password">
@@ -19,4 +19,4 @@
 		</div>
 	</div>
 </div>
-<%- include('partials/footer'); -%>
+<%- include('partials/blogFooter'); -%>
