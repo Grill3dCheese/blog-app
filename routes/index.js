@@ -117,11 +117,11 @@ router.post('/forgot', function(req, res, next) {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: "keithmckenna.com",
+        host: process.env.MAILHOST,
 		port: 465,
 		secure: true,
         auth: {
-          user: "hello@keithmckenna.com",
+          user: process.env.MAILUN,
           pass: process.env.MAILEPW
         }
       });
