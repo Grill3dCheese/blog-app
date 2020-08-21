@@ -1,9 +1,16 @@
-# This project is a blog application I created after learning RESTful architecture and CRUD cycles. The app was developed using JS/NodeJS, HTML, CSS, Bootstrap4 and templated using Express.
+# Blog Web Application
 
-# Persistent NoSQL(MongoDB) Database used to store blog entries.
+After learning about RESTful architecture and the CRUD cycle, I decided to create a blog web application. This app is developed using both Front End and Back End stacks, as listed below. JS/NodeJS, HTML, CSS, Bootstrap4 and templated using Express.
 
-# Several NPM packages included
+| Front End        | Back End           |
+| :-----------:|:-------------:|
+| HTML5        | NodeJS / NPM  |
+| CSS3         | Express |
+| JavaScript / jQuery  | MongoDB |
+| Bootstrap 4  | are neat      |
 
-# Authentication provided by -- Passport
+- ✏ Persistent NoSQL(MongoDB) database used to store blog entries.
 
-# Messaging sponsored by -- Flash messaging
+- 📦 Several NPM packages included
+
+- 🔐 Authentication provided by -- Passport
